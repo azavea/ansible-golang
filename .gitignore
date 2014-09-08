@@ -1,0 +1,4 @@
+.vagrant
+examples/roles/azavea.build-essential
+examples/roles/azavea.git
+examples/roles/azavea.mercurial
