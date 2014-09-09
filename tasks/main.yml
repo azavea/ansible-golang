@@ -18,6 +18,3 @@
   command: go get github.com/tools/godep
            creates={{ golang_path }}/bin/godep
   environment: env
-
-- name: Enable GOPATH on login
-  template: src=gopath.sh.j2 dest=/etc/profile.d/gopath.sh
