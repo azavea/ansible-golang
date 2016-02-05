@@ -4,11 +4,14 @@
            dest=/usr/local/src/go{{ golang_version }}.{{ golang_os }}-{{ golang_arch }}.tar.gz
 
 - name: Extract and install Go
-  command: tar -C /usr/local -xzf /usr/local/src/go{{ golang_version }}.{{ golang_os }}-{{ golang_arch }}.tar.gz
-           creates=/usr/local/bin/go
+  unarchive: src=/usr/local/src/go{{ golang_version }}.{{ golang_os }}-{{ golang_arch }}.tar.gz
+             dest=/usr/local/
+             copy=no
 
 - name: Symlink Go into /usr/local/bin
-  file: src=/usr/local/go/bin/{{ item }} dest=/usr/local/bin/{{ item }} state=link
+  file: src="/usr/local/go/bin/{{ item }}"
+        dest="/usr/local/bin/{{ item }}"
+        state=link
   with_items:
     - go
     - godoc
@@ -17,4 +20,5 @@
 - name: Install Godep
   command: go get github.com/tools/godep
            creates={{ golang_path }}/bin/godep
-  environment: env
+  environment:
+    GOPATH: "{{ golang_path }}"
