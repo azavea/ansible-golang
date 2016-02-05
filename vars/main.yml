@@ -1,3 +1,0 @@
----
-env:
-  GOPATH: "{{ golang_path }}"
