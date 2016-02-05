@@ -1,3 +1,7 @@
+## 0.3.0
+
+- Add backward compatible support with Ansible 2.0.
+
 ## 0.2.0
 
 - Remove mechanism for setting `GOPATH` in `/etc/profile.d`.
