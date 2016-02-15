@@ -1,3 +1,0 @@
-azavea.build-essential,0.1.0
-azavea.git,0.1.0
-azavea.mercurial,0.1.0
