@@ -1,0 +1,6 @@
+- name: azavea.build-essential
+  version: 0.1.0
+- name: azavea.git
+  version: 0.1.0
+- name: azavea.mercurial
+  version: 0.1.0
