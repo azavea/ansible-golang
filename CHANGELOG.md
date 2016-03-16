@@ -1,3 +1,8 @@
+## 0.4.0
+
+- Bump default version of Go to `1.6`.
+- Download Go from Google Cloud Storage over HTTPS.
+
 ## 0.3.1
 
 - Ensure that example uses YAML role specification format.
