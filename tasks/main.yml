@@ -1,10 +1,10 @@
 ---
 - name: Download Go
-  get_url: url=http://golang.org/dl/go{{ golang_version }}.{{ golang_os }}-{{ golang_arch }}.tar.gz
-           dest=/usr/local/src/go{{ golang_version }}.{{ golang_os }}-{{ golang_arch }}.tar.gz
+  get_url: url="https://storage.googleapis.com/golang/go{{ golang_version }}.{{ golang_os }}-{{ golang_arch }}.tar.gz"
+           dest="/usr/local/src/go{{ golang_version }}.{{ golang_os }}-{{ golang_arch }}.tar.gz"
 
 - name: Extract and install Go
-  unarchive: src=/usr/local/src/go{{ golang_version }}.{{ golang_os }}-{{ golang_arch }}.tar.gz
+  unarchive: src="/usr/local/src/go{{ golang_version }}.{{ golang_os }}-{{ golang_arch }}.tar.gz"
              dest=/usr/local/
              copy=no
 
@@ -19,6 +19,6 @@
 
 - name: Install Godep
   command: go get github.com/tools/godep
-           creates={{ golang_path }}/bin/godep
+           creates="{{ golang_path }}/bin/godep"
   environment:
     GOPATH: "{{ golang_path }}"
