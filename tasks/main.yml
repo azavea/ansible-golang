@@ -1,6 +1,6 @@
 ---
 - name: Download Go
-  get_url: url=http://golang.org/dl/go{{ golang_version }}.{{ golang_os }}-{{ golang_arch }}.tar.gz
+  get_url: url=https://golang.org/dl/go{{ golang_version }}.{{ golang_os }}-{{ golang_arch }}.tar.gz
            dest=/usr/local/src/go{{ golang_version }}.{{ golang_os }}-{{ golang_arch }}.tar.gz
 
 - name: Extract and install Go
